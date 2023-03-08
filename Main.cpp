@@ -10,7 +10,11 @@ Notes: NA
 
 // TODO: add parameters to main() for command line args
 int main(int argc, char * argv[]) {
+  if(argc != 2){
+    cout << "Please enter the correct number of arguments when running the program." << endl << "Example:  ./runPA4 ../truckload.txt" << endl;
+  }
 	// TODO: your code here
+  if(argc == 2){
   ifstream inFile;
   string word, truckerName;
   int numPackages = 0, heaviestId;
@@ -25,5 +29,6 @@ int main(int argc, char * argv[]) {
   displayInformation(inFile, &truckerName, &numPackages, &heaviestId, &heaviestWeight, &avgWeight);
 
   inFile.close();
+    }
 	return 0;
 }
